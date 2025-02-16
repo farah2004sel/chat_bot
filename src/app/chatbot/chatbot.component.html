@@ -1,0 +1,11 @@
+<div class="chatbot">
+    <div class="messages">
+      <div *ngFor="let message of messages">{{ message }}</div>
+    </div>
+    <input [(ngModel)]="userInput" (keyup.enter)="askQuestion()" placeholder="Ask me anything..." />
+    <button (click)="askQuestion()">Ask</button>
+    <div *ngIf="chatbotResponse">
+      <p><strong>Chatbot:</strong> {{ chatbotResponse }}</p>
+    </div>
+  </div>
+  
